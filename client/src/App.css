@@ -1,42 +1,196 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  width: 100vw;
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-image: url("/public/hello.jpg");
+  box-shadow: inset 0 0 0 100vmax rgba(255, 255, 255, 0.7);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 20rem;
   text-align: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.glow {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 60%;
+  border-radius: 15px;
+  align-self: center;
+  padding: 1rem;
+  font-size: 4rem;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 
-@keyframes logo-spin {
+@keyframes glow {
   from {
-    transform: rotate(0deg);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+      0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
   to {
-    transform: rotate(360deg);
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+      0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+main {
+  width: 100%;
+  display: flex;
+  background-image: url("/public/book1.jpg");
+  box-shadow: inset 0 0 0 100vmax rgba(255, 255, 255, 0.2);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: space-around;
+}
+
+form {
+  margin: 2rem 0rem;
+  padding: 2rem;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  width: 30%;
+  border: 2px solid white;
+}
+
+select {
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+input {
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 10px;
+  width: 70%;
+}
+
+button {
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+img {
+  width: 30%;
+  margin: 2rem 0rem;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+.output {
+  background-color: white;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+footer {
+  background-image: url("/public/goodbye1.jpg");
+  box-shadow: inset 0 0 0 100vmax rgba(255, 255, 255, 0.7);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 10rem;
+  text-align: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.foot-text {
+  width: 20%;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 2rem;
+  color: white;
+  align-self: center;
+  padding: 1rem;
+}
+
+.foot-text a {
+  color: white;
+  text-decoration: none;
+}
+
+.foot-text a:hover {
+  cursor: pointer;
+  color: #ff4da6;
+  text-shadow: 0 0 15px #e60073;
+  transition: ease-in 0.3s;
+}
+
+@media only screen and (max-width: 1366px) {
+  .foot-text {
+    font-size: 1.5rem;
+  }
+  input {
+    width: 90%;
+    margin-top: 10px;
   }
 }
 
-.card {
-  padding: 2em;
-}
+@media only screen and (max-width: 402px) {
+  .glow {
+    font-size: 2rem;
+  }
 
-.read-the-docs {
-  color: #888;
+  header {
+    height: 15rem;
+  }
+
+  footer {
+    height: 6rem;
+  }
+
+  main {
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  form {
+    width: 70%;
+    margin: 1rem 0;
+  }
+
+  button,
+  select,
+  input,
+  output {
+    font-size: 1rem;
+    padding: 5px;
+  }
+
+  img {
+    width: 85%;
+  }
+
+  .foot-text {
+    width: 60%;
+    padding: 0.5rem;
+  }
 }

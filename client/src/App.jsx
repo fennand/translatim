@@ -7,14 +7,14 @@ function App() {
   const [to, setTo] = useState("ar");
   const [word, setWord] = useState("");
   const [translation, setTranslation] = useState("");
-  const [imageUrl, setImageUrl] = useState([]);
+  const [image, setImage] = useState("");
 
   async function handleTranslate(event) {
     event.preventDefault();
     const API = `https://translatim-3547.onrender.com/translate?word=${word}&from=${from}&to=${to}`;
     const res = await axios.get(API);
     setTranslation(res.data.translation);
-    setImageUrl(res.data.img_url);
+    setImage(res.data.image);
   }
 
   return (
@@ -53,7 +53,7 @@ function App() {
             <div className="output">{translation}</div>
           </div>
         </form>
-        <img src={imageUrl} alt="" />
+        <img src={image} alt="" />
       </main>
       <footer>
         <p className="foot-text">

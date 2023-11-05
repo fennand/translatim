@@ -9,11 +9,9 @@ function App() {
   const [translation, setTranslation] = useState("");
   const [imageUrl, setImageUrl] = useState([]);
 
-  const IMAGE_API = import.meta.env.IMAGE_API_ACCESS_KEY;
-
   async function handleTranslate(event) {
     event.preventDefault();
-    const API = `http://localhost:8080/translate?word=${word}&from=${from}&to=${to}`;
+    const API = `https://translatim-3547.onrender.com/translate?word=${word}&from=${from}&to=${to}`;
     const res = await axios.get(API);
     setTranslation(res.data.translation);
     setImageUrl(res.data.img_url);
